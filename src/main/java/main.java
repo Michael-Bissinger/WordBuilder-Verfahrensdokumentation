@@ -11,9 +11,11 @@ public class main {
         // Auslesen Datei BLABLA
         // Auslesen Datei FOO
 
-        // Check, ob alle relevanten Informationen ausgefüllt sind?
 
-        // Wenn nein = Report erstellen
+        // lines zu finalem Dokument schreiben
+
+
+
 
 
 
