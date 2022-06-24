@@ -9,6 +9,7 @@ public class main {
         String location = FileLocator.locateFile();
 
         // Hier werden Zeilen für finalen Output gesammelt
+        List<String> latex_dependencies = new ArrayList<>();
         List<String> lines = new ArrayList<>();
 
         System.out.println("File-Location ist: " + location);
@@ -20,7 +21,10 @@ public class main {
 
         // lines zu finalem Dokument schreiben
 
-        DocumentFinalizer.writelines(lines);
+        DocumentFinalizer.createOutputDoc();
+
+        DocumentFinalizer.writeContent(latex_dependencies);
+        DocumentFinalizer.writeContent(lines);
 
 
 
