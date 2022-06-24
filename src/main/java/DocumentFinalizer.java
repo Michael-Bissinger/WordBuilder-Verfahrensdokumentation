@@ -11,7 +11,7 @@ public class DocumentFinalizer {
         // LaTex-Datei erstellen
         // https://www.w3schools.com/java/java_files_create.asp
         try {
-            File docu_output = new File("docu_output.tex");
+            File docu_output = new File("docu_output.tex"); //TODO: Relativen Pfad machen
             if (docu_output.createNewFile()) {
                 System.out.println("Finale Datei erstellt: " + docu_output.getName());
             } else {

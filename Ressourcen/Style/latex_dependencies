@@ -1,0 +1,16 @@
+\documentclass[a4paper,fontsize=12pt,oneside,parskip=half,headings=normal, bibtotocnumbered]{scrreprt}
+\usepackage{german}
+
+
+% --- Schriftart: Arial ---
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% --- Grafiken ----
+\usepackage{graphicx}
+
+% --- Tabellen ---
+\usepackage{longtable} % Damit ich lange Tabellen machen kann
+
+% Auf Abbildung referenzieren, erzeugt allerdings Hyperlinks:
+\usepackage[hidelinks]{hyperref}
