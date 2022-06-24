@@ -1,8 +1,9 @@
+import java.util.List;
 import java.util.Scanner;
 
 public class ContentWriter {
 
-    public static String[] addline (String[] lines, String line_original){ //TODO:Noch durch String-Liste ersetzen
+    public static List<String> addline (List<String> lines, String line_original){ //TODO:Noch durch String-Liste ersetzen
 
         String line_neu = parseToLaTex(line_original);
 

@@ -1,9 +1,15 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class main {
     public static void main(String[] args){
         System.out.println("Ausgabe aus der main()-Methode");
 
         // Wo liegen die benötigten Dokumente?
         String location = FileLocator.locateFile();
+
+        // Hier werden Zeilen für finalen Output gesammelt
+        List<String> lines = new ArrayList<>();
 
         System.out.println("File-Location ist: " + location);
 
@@ -14,7 +20,7 @@ public class main {
 
         // lines zu finalem Dokument schreiben
 
-
+        DocumentFinalizer.writelines(lines);
 
 
 
