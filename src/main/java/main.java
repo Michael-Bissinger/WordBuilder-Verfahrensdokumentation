@@ -1,3 +1,5 @@
+import Builders.TitleBuilder;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +22,8 @@ public class main {
         //List<String> lines = new ArrayList<>();
 
         System.out.println("File-Location ist: " + location);
+
+        titelblatt = TitleBuilder.makeTitle(titelblatt);
 
         // Auslesen Datei XYZ
         // Auslesen Datei BLABLA
