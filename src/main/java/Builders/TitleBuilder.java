@@ -12,6 +12,9 @@ public class TitleBuilder {
     private static String UNTERNEHMEN_HAUSNUMMER = "5"; // Hausnummer des Unternehmens
     private static String UNTERNEHMEN_POSTLEITZAHL = "70565"; // Postleitzahl des Unternehmens
     private static String UNTERNEHMEN_ORT = "Stuttgart"; // Ort des Unternehmens
+    private static String DOKU_VERSIONSNUMMER = "1.0"; // Versionsnummer der Verfahrensdokumentation
+    private static String DOKU_STAND_DATUM = "23.06.2022"; // Datum der Verfahrensdokumentation
+
 
     public static List<String> makeTitle (List<String> list) {
 
@@ -44,8 +47,10 @@ public class TitleBuilder {
         list.add("\\vfill");
 
         // Aktueller Stand
-        list.add("\\underline{Versionsnummer:} 1.0\\par");
-        list.add("\\underline{Stand:} 23.06.2022\\par");
+        list.add("\\underline{Versionsnummer:} " + DOKU_VERSIONSNUMMER + "\\par");
+                //list.add("\\underline{Versionsnummer:} 1.0\\par");
+        list.add("\\underline{Stand:} " + DOKU_STAND_DATUM + "\\par");
+                //list.add("\\underline{Stand:} 23.06.2022\\par");
 
         list.add("\\vfill");
         list.add("\\vspace{2cm}");

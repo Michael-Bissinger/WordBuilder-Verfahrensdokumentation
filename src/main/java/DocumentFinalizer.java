@@ -28,16 +28,6 @@ public class DocumentFinalizer {
         // Alle lines Zeile für Zeile in Datei schreiben
         // https://stackoverflow.com/questions/50257374/how-do-i-write-multiple-lines-to-a-text-file-in-java#:~:text=%22%5Cr%5Cn%22%20%2D,line%20separator%20for%20Windows%20systems.
 
-        try (FileWriter fstream = new FileWriter("docu_output.tex");
-             BufferedWriter info = new BufferedWriter(fstream)) {
-            for (int i = 0; i < lines.size(); i++) {
-                info.write(String.format("Hello%n"));
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
 
         try (FileWriter fstream = new FileWriter("docu_output.tex");
              BufferedWriter info = new BufferedWriter(fstream)) {

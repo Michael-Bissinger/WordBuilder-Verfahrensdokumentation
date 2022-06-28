@@ -1,3 +1,5 @@
+import Builders.DocEndBuilder;
+import Builders.LaTexDependencyBuilder;
 import Builders.TitleBuilder;
 
 import java.util.ArrayList;
@@ -19,18 +21,20 @@ public class main {
         List<String> verfahren_massnahmen = new ArrayList<>();
         List<String> mitgeltende_unterlagen = new ArrayList<>();
         List<String> aenderungshistorie = new ArrayList<>();
+        List<String> doc_ende = new ArrayList<>();
+
         //List<String> lines = new ArrayList<>();
 
         System.out.println("File-Location ist: " + location);
 
+        // Einzelne Abschnitte schreiben
+        latex_dependencies = LaTexDependencyBuilder.makeDependencies(latex_dependencies);
         titelblatt = TitleBuilder.makeTitle(titelblatt);
-
-        // Auslesen Datei XYZ
-        // Auslesen Datei BLABLA
-        // Auslesen Datei FOO
+        doc_ende = DocEndBuilder.makeDocEnd(doc_ende);
 
 
         // lines zu finalem Dokument schreiben
+
 
         DocumentFinalizer.createOutputDoc();
 
