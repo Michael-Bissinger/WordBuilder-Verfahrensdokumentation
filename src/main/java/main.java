@@ -29,7 +29,10 @@ public class main {
         // Einzelne Abschnitte schreiben
         latex_dependencies = LaTexDependencyBuilder.makeDependencies(latex_dependencies);
         titelblatt = TitleBuilder.makeTitle(titelblatt);
-        verzeichnisse = VerzeichnisseBuilder.makeVerzeichnisse(titelblatt);
+        verzeichnisse = VerzeichnisseBuilder.makeVerzeichnisse(verzeichnisse);
+        vorbemerkungen = VorbemerkungenBuilder.makeVorbemerkungen(vorbemerkungen);
+        zielsetzung_ueberblick = ZielsetzungUeberblickBuilder.makeZielsetzungUeberblick(zielsetzung_ueberblick);
+        organisation_sicherheit = OrganisationSicherheitBuilder.makeOrganisationSicherheit(organisation_sicherheit);
 
         doc_ende = DocEndBuilder.makeDocEnd(doc_ende);
 
@@ -40,6 +43,9 @@ public class main {
                 latex_dependencies,
                 titelblatt,
                 verzeichnisse,
+                vorbemerkungen,
+                zielsetzung_ueberblick,
+                organisation_sicherheit,
                 doc_ende);
 
         System.out.println("FInale Liste:::::");
@@ -47,15 +53,6 @@ public class main {
 
 
         DocumentFinalizer.writeContent(list_final);
-
-        //latex_dependencies = ContentExtractor.getContent(latex_dependencies,
-                //"\"Ressourcen\"Style\"latex_dependencies\"");
-
-
-        //DocumentFinalizer.writeContent(latex_dependencies);
-        //DocumentFinalizer.writeContent(titelblatt);
-
-
 
 
     }

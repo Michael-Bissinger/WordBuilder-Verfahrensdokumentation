@@ -33,5 +33,10 @@ public class LaTexDependencyBuilder {
 
         return list;
 
+
+        //latex_dependencies = ContentExtractor.getContent(latex_dependencies,
+        //"\"Ressourcen\"Style\"latex_dependencies\"");
+
+
     }
 }

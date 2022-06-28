@@ -7,14 +7,13 @@ public class TitleBuilder {
     private static String LOGONAME = "HWS_New_Logo_blue.png"; // Name von Logo-Datei
     private static String UNTERNEHMENSNAME = "HWS Lutz"; // Name des Unternehmens
     private static String RECHTSFORM = "GmbH \\& Co. KG"; // Rechtsform des Unternehmens
-    private static String UNTERNEHMENSART = "Steuerberatungsgesellschaft"; // Art des Unternehmens
+    private static String UNTERNEHMENSBRANCHE = "Steuerberatungsgesellschaft"; // Branche des Unternehmens
     private static String UNTERNEHMEN_STRASSE = "Kupferstraße"; // Straße des Unternehmens
     private static String UNTERNEHMEN_HAUSNUMMER = "5"; // Hausnummer des Unternehmens
     private static String UNTERNEHMEN_POSTLEITZAHL = "70565"; // Postleitzahl des Unternehmens
     private static String UNTERNEHMEN_ORT = "Stuttgart"; // Ort des Unternehmens
     private static String DOKU_VERSIONSNUMMER = "1.0"; // Versionsnummer der Verfahrensdokumentation
     private static String DOKU_STAND_DATUM = "23.06.2022"; // Datum der Verfahrensdokumentation
-
 
     public static List<String> makeTitle (List<String> list) {
 
@@ -37,7 +36,7 @@ public class TitleBuilder {
         // Unternehmensangaben
         list.add("\\textbf{"+ UNTERNEHMENSNAME + " " + RECHTSFORM + "}\\par");
                 //list.add("\\textbf{HWS Lutz GmbH \\& Co. KG}\\par");
-        list.add(UNTERNEHMENSART + "\\par");
+        list.add(UNTERNEHMENSBRANCHE + "\\par");
                 //list.add("Steuerberatungsgesellschaft\\par");
         list.add(UNTERNEHMEN_STRASSE +" " + UNTERNEHMEN_HAUSNUMMER + "\\par");
                 //list.add("Kupferstraße 5\\par");
