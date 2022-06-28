@@ -4,6 +4,15 @@ import java.util.List;
 
 public class TitleBuilder {
 
+    private static String LOGONAME = "HWS_New_Logo_blue.png"; // Name von Logo-Datei
+    private static String UNTERNEHMENSNAME = "HWS Lutz"; // Name des Unternehmens
+    private static String RECHTSFORM = "GmbH \\& Co. KG"; // Rechtsform des Unternehmens
+    private static String UNTERNEHMENSART = "Steuerberatungsgesellschaft"; // Art des Unternehmens
+    private static String UNTERNEHMEN_STRASSE = "Kupferstraße"; // Straße des Unternehmens
+    private static String UNTERNEHMEN_HAUSNUMMER = "5"; // Hausnummer des Unternehmens
+    private static String UNTERNEHMEN_POSTLEITZAHL = "70565"; // Postleitzahl des Unternehmens
+    private static String UNTERNEHMEN_ORT = "Stuttgart"; // Ort des Unternehmens
+
     public static List<String> makeTitle (List<String> list) {
 
         // Titelzeilen in Liste abspeichern (Zeile für Zeile)
@@ -11,7 +20,7 @@ public class TitleBuilder {
         // Header
         list.add("\\begin{titlepage}");
         list.add("\\centering");
-        list.add("\\includegraphics[width=0.15\\textwidth]{Grafiken/laptop.png}\\par%\\vspace{1cm}");
+        list.add("\\includegraphics[width=0.15\\textwidth]{Grafiken/laptop.png}\\par");
         list.add("");
         list.add("{\\scshape\\huge Verfahrensdokumentation \\par}");
 
@@ -19,13 +28,18 @@ public class TitleBuilder {
         list.add("\\vfill");
 
         // Logo
-        list.add("\\includegraphics[width=0.15\\textwidth]{Grafiken/HWS_New_Logo_blue.png}\\par");
+        list.add("\\includegraphics[width=0.15\\textwidth]{Grafiken/" + LOGONAME + "}\\par");
+                //list.add("\\includegraphics[width=0.15\\textwidth]{Grafiken/HWS_New_Logo_blue.png}\\par");
 
         // Unternehmensangaben
-        list.add("\\textbf{HWS Lutz GmbH \\& Co. KG}\\par");
-        list.add("Steuerberatungsgesellschaft\\par");
-        list.add("Kupferstraße 5\\par");
-        list.add("70565 Stuttgart\\par");
+        list.add("\\textbf{"+ UNTERNEHMENSNAME + " " + RECHTSFORM + "}\\par");
+                //list.add("\\textbf{HWS Lutz GmbH \\& Co. KG}\\par");
+        list.add(UNTERNEHMENSART + "\\par");
+                //list.add("Steuerberatungsgesellschaft\\par");
+        list.add(UNTERNEHMEN_STRASSE +" " + UNTERNEHMEN_HAUSNUMMER + "\\par");
+                //list.add("Kupferstraße 5\\par");
+        list.add(UNTERNEHMEN_POSTLEITZAHL + " " + UNTERNEHMEN_ORT + "\\par");
+                //list.add("70565 Stuttgart\\par");
 
         list.add("\\vfill");
 
