@@ -1,6 +1,4 @@
-import Builders.DocEndBuilder;
-import Builders.LaTexDependencyBuilder;
-import Builders.TitleBuilder;
+import Builders.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +13,7 @@ public class main {
         // Hier werden Zeilen für finalen Output gesammelt
         List<String> latex_dependencies = new ArrayList<>();
         List<String> titelblatt = new ArrayList<>();
+        List<String> verzeichnisse = new ArrayList<>();
         List<String> vorbemerkungen = new ArrayList<>();
         List<String> zielsetzung_ueberblick = new ArrayList<>();
         List<String> organisation_sicherheit = new ArrayList<>();
@@ -30,20 +29,31 @@ public class main {
         // Einzelne Abschnitte schreiben
         latex_dependencies = LaTexDependencyBuilder.makeDependencies(latex_dependencies);
         titelblatt = TitleBuilder.makeTitle(titelblatt);
+        verzeichnisse = VerzeichnisseBuilder.makeVerzeichnisse(titelblatt);
+
         doc_ende = DocEndBuilder.makeDocEnd(doc_ende);
 
 
         // lines zu finalem Dokument schreiben
+        List<String> list_final;
+        list_final = FinalBuilder.mergeLists(
+                latex_dependencies,
+                titelblatt,
+                verzeichnisse,
+                doc_ende);
+
+        System.out.println("FInale Liste:::::");
+        System.out.println(list_final);
 
 
-        DocumentFinalizer.createOutputDoc();
+        DocumentFinalizer.writeContent(list_final);
 
-        latex_dependencies = ContentExtractor.getContent(latex_dependencies,
-                "\"Ressourcen\"Style\"latex_dependencies\"");
+        //latex_dependencies = ContentExtractor.getContent(latex_dependencies,
+                //"\"Ressourcen\"Style\"latex_dependencies\"");
 
 
-        DocumentFinalizer.writeContent(latex_dependencies);
-        DocumentFinalizer.writeContent(titelblatt);
+        //DocumentFinalizer.writeContent(latex_dependencies);
+        //DocumentFinalizer.writeContent(titelblatt);
 
 
 
