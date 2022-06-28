@@ -20,6 +20,7 @@ public class main {
         List<String> verfahren_massnahmen = new ArrayList<>();
         List<String> mitgeltende_unterlagen = new ArrayList<>();
         List<String> aenderungshistorie = new ArrayList<>();
+        List<String> glossar = new ArrayList<>();
         List<String> doc_ende = new ArrayList<>();
 
         //List<String> lines = new ArrayList<>();
@@ -33,6 +34,11 @@ public class main {
         vorbemerkungen = VorbemerkungenBuilder.makeVorbemerkungen(vorbemerkungen);
         zielsetzung_ueberblick = ZielsetzungUeberblickBuilder.makeZielsetzungUeberblick(zielsetzung_ueberblick);
         organisation_sicherheit = OrganisationSicherheitBuilder.makeOrganisationSicherheit(organisation_sicherheit);
+        verfahren_massnahmen = VerfahrenMassnahmenBuilder.makeVerfahrenMassnahmen(verfahren_massnahmen);
+        mitgeltende_unterlagen = MitgeltendeUnterlagenBuilder.makeMitgeltendeUnterlagen(mitgeltende_unterlagen);
+        aenderungshistorie = AenderungshistorieBuilder.makeAenderungshistorie(aenderungshistorie);
+        glossar = GlossarBuilder.makeGlossar(glossar);
+
 
         doc_ende = DocEndBuilder.makeDocEnd(doc_ende);
 
@@ -46,6 +52,10 @@ public class main {
                 vorbemerkungen,
                 zielsetzung_ueberblick,
                 organisation_sicherheit,
+                verfahren_massnahmen,
+                mitgeltende_unterlagen,
+                aenderungshistorie,
+                glossar,
                 doc_ende);
 
         System.out.println("FInale Liste:::::");

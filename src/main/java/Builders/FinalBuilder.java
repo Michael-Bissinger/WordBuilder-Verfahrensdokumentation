@@ -5,7 +5,7 @@ import java.util.List;
 
 public class FinalBuilder {
 
-    private static Integer NUMBER_RUNS = 7; // Anzahl Durchläufe
+    private static Integer NUMBER_RUNS = 11; // Anzahl Durchläufe
 
     public static List<String> mergeLists (List<String> latex_dependencies,
                                            List<String> titelblatt,
@@ -13,7 +13,10 @@ public class FinalBuilder {
                                            List<String> vorbemerkungen,
                                            List<String> zielsetzung_ueberblick,
                                            List<String> organisation_sicherheit,
-
+                                           List<String> verfahren_massnahmen,
+                                           List<String> mitgeltende_unterlagen,
+                                           List<String> aenderungshistorie,
+                                           List<String> glossar,
                                            List<String> doc_ende) {
 
         List<String> list_final = new ArrayList<>();
@@ -49,6 +52,22 @@ public class FinalBuilder {
                     System.out.print("organisation_sicherheit");
                     break;
                 case 6:
+                    list_transfer = verfahren_massnahmen;
+                    System.out.print("verfahren_massnahmen");
+                    break;
+                case 7:
+                    list_transfer = mitgeltende_unterlagen;
+                    System.out.print("mitgeltende_unterlagen");
+                    break;
+                case 8:
+                    list_transfer = aenderungshistorie;
+                    System.out.print("aenderungshistorie");
+                    break;
+                case 9:
+                    list_transfer = glossar;
+                    System.out.print("glossar");
+                    break;
+                case 10:
                     list_transfer = doc_ende;
                     System.out.print("doc_ende");
                     break;

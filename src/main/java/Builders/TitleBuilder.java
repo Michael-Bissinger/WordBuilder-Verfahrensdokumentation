@@ -82,7 +82,5 @@ public class TitleBuilder {
         // Liste zurückgeben
         return list;
 
-
     }
-
 }
