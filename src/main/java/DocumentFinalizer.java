@@ -37,6 +37,19 @@ public class DocumentFinalizer {
             e.printStackTrace();
         }
 
+
+
+        try (FileWriter fstream = new FileWriter("docu_output.tex");
+             BufferedWriter info = new BufferedWriter(fstream)) {
+            for (int i = 0; i < lines.size(); i++) {
+                System.out.println("Durchlauf: " + i);
+                info.write(String.format(lines.get(i).toString()+ "%n"));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
 }
