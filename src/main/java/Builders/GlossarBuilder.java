@@ -49,10 +49,11 @@ public class GlossarBuilder {
         System.out.println("Größe data: " + data.size());
 
 
-        for(int i=0;i<data.size();i++){
-            System.out.println("Glossar wird geschrieben. Durchlauf Nr. " + i);
+        for(int i=1;i<data.size();i++){
+            System.out.print("Glossar wird geschrieben. Durchlauf Nr. " + i);
+            System.out.println("Inhalt: " + data.get(i).get(0));
 
-            list.add("XXX & XXX  \\\\ \\hline");
+            list.add(data.get(i).get(0) + " & " + data.get(i).get(1) + "  \\\\ \\hline");
             list.add("");
 
         }
