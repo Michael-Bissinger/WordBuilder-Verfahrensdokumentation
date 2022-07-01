@@ -1,5 +1,10 @@
 package Builders;
 
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.List;
 
 public class GlossarBuilder {
@@ -26,6 +31,9 @@ public class GlossarBuilder {
 
         //TODO: Aus Excel-Datei Einträge holen
         // https://www.baeldung.com/java-microsoft-excel
+
+        FileInputStream file = new FileInputStream(new File(fileLocation));
+        Workbook workbook = new XSSFWorkbook(file);
 
 
 
