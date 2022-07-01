@@ -1,5 +1,6 @@
 package Builders;
 
+import Helpers.ExcelReader;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -38,26 +39,11 @@ public class GlossarBuilder {
         //TODO: Aus Excel-Datei Einträge holen
         // https://www.baeldung.com/java-microsoft-excel
 
-        FileInputStream file = new FileInputStream(new File(fileLocation));
-        Workbook workbook = new XSSFWorkbook(file);
-
-        Sheet sheet = workbook.getSheetAt(0);
-
+        String glossar_sheet_path = "XXX"; // TODO: Richtigen Pfad einfügen
         Map<Integer, List<String>> data = new HashMap<>();
-        int i = 0;
-        for (Row row : sheet) {
-            data.put(i, new ArrayList<>());
-            for (Cell cell : row) {
-                switch (cell.getCellType()) {
-                    case STRING: ... break;
-                    case NUMERIC: ... break;
-                    case BOOLEAN: ... break;
-                    case FORMULA: ... break;
-                    default: data.get(new Integer(i)).add(" ");
-                }
-            }
-            i++;
-        }
+        data = ExcelReader.readExcel(glossar_sheet_path);
+
+
 
 
 
