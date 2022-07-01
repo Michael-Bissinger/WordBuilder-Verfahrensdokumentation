@@ -39,18 +39,33 @@ public class GlossarBuilder {
         //TODO: Aus Excel-Datei Einträge holen
         // https://www.baeldung.com/java-microsoft-excel
 
-        String glossar_sheet_path = "XXX"; // TODO: Richtigen Pfad einfügen
+        //String glossar_sheet_path = "Ressourcen/Glossar/Glossar_data.xlsx"; // TODO: Richtigen Pfad einfügen
+        File glossar_sheet_path= new File("Ressourcen/Glossar/Glossar_data.xlsx");
         Map<Integer, List<String>> data = new HashMap<>();
         data = ExcelReader.readExcel(glossar_sheet_path);
 
+        System.out.println("Das ist das Ergebnis der Excel: " + data);
+
+        System.out.println("Größe data: " + data.size());
+
+
+        for(int i=0;i<data.size();i++){
+            System.out.println("Glossar wird geschrieben. Durchlauf Nr. " + i);
+
+            list.add("XXX & XXX  \\\\ \\hline");
+            list.add("");
+
+        }
 
 
 
 
-        list.add("XXX & XXX  \\\\ \\hline");
-        list.add("");
-        list.add("XXX & XXX  \\\\ \\hline");
-        list.add("");
+
+
+        //list.add("XXX & XXX  \\\\ \\hline");
+        //list.add("");
+        //list.add("XXX & XXX  \\\\ \\hline");
+        //list.add("");
         list.add("\\end{longtable}");
         list.add("");
         list.add("");

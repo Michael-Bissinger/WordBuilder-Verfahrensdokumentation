@@ -1,9 +1,6 @@
 package Helpers;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
@@ -17,14 +14,14 @@ import java.util.Map;
 
 public class ExcelReader {
 
-    public static Map<Integer, List<String>> readExcel (String fileLocation) {
+    public static Map<Integer, List<String>> readExcel (File fileLocation) {
 
         // Aus Excel-Datei Einträge holen
         // https://www.baeldung.com/java-microsoft-excel
 
         FileInputStream file = null;
         try {
-            file = new FileInputStream(new File(fileLocation));
+            file = new FileInputStream(new File(fileLocation.getPath()));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -43,13 +40,30 @@ public class ExcelReader {
                 Row row : sheet) {
             data.put(i, new ArrayList<>());
             for (Cell cell : row) {
+
+                //data.get(i).add(" Halllo ");
+                //data.get(i).add(" ");
+
                 switch (cell.getCellType()) {
-                    case STRING: break;
-                    case NUMERIC: break;
-                    case BOOLEAN: break;
-                    case FORMULA: break;
+                    case STRING:
+                        data.get(i).add(cell.getRichStringCellValue().getString());
+                        break;
+
+                    case NUMERIC:
+                        if (DateUtil.isCellDateFormatted(cell)) {
+                            data.get(i).add(cell.getDateCellValue() + "");
+                        } else {
+                            data.get(i).add(cell.getNumericCellValue() + "");
+                        }break;
+
+                    case BOOLEAN:
+                        data.get(i).add(cell.getBooleanCellValue() + "");
+                        break;
+                    case FORMULA:
+                        data.get(i).add(cell.getCellFormula() + "");
+                        break;
                     default:
-                        data.get(new Integer(i)).add(" ");
+                        data.get(i).add(" ");
                 }
             }
             i++;
