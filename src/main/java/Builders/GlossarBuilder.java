@@ -23,6 +23,12 @@ public class GlossarBuilder {
         list.add("\\hline");
         list.add("\\endlastfoot");
         list.add("");
+
+        //TODO: Aus Excel-Datei Einträge holen
+        // https://www.baeldung.com/java-microsoft-excel
+
+
+
         list.add("XXX & XXX  \\\\ \\hline");
         list.add("");
         list.add("XXX & XXX  \\\\ \\hline");
