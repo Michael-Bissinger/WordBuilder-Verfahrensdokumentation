@@ -6,17 +6,6 @@ import java.util.List;
 
 public class TitleBuilder {
 
-    private static String LOGONAME = "HWS_New_Logo_blue.png"; // Name von Logo-Datei
-    private static String UNTERNEHMENSNAME = "HWS Lutz"; // Name des Unternehmens
-    private static String RECHTSFORM = "GmbH \\& Co. KG"; // Rechtsform des Unternehmens
-    private static String UNTERNEHMENSBRANCHE = "Steuerberatungsgesellschaft"; // Branche des Unternehmens
-    private static String UNTERNEHMEN_STRASSE = "Kupferstraße"; // Straße des Unternehmens
-    private static String UNTERNEHMEN_HAUSNUMMER = "5"; // Hausnummer des Unternehmens
-    private static String UNTERNEHMEN_POSTLEITZAHL = "70565"; // Postleitzahl des Unternehmens
-    private static String UNTERNEHMEN_ORT = "Stuttgart"; // Ort des Unternehmens
-    private static String DOKU_VERSIONSNUMMER = "1.0"; // Versionsnummer der Verfahrensdokumentation
-    private static String DOKU_STAND_DATUM = "23.06.2022"; // Datum der Verfahrensdokumentation
-
     public static List<String> makeTitle (List<String> list) {
 
         // Titelzeilen in Liste abspeichern (Zeile für Zeile)
@@ -32,25 +21,25 @@ public class TitleBuilder {
         list.add("\\vfill");
 
         // Logo
-        list.add("\\includegraphics[width=0.15\\textwidth]{Grafiken/" + LOGONAME + "}\\par");
+        list.add("\\includegraphics[width=0.15\\textwidth]{Grafiken/" + BaseDataHandler.getData("Unternehmen_Logo_Pfad") + "}\\par");
                 //list.add("\\includegraphics[width=0.15\\textwidth]{Grafiken/HWS_New_Logo_blue.png}\\par");
 
         // Unternehmensangaben
-        list.add("\\textbf{" + BaseDataHandler.getData("Unternehmen_Name") + " " + RECHTSFORM + "}\\par");
+        list.add("\\textbf{" + BaseDataHandler.getData("Unternehmen_Name") + " " + BaseDataHandler.getData("Unternehmen_Rechtsform") + "}\\par");
                 //list.add("\\textbf{HWS Lutz GmbH \\& Co. KG}\\par");
-        list.add(UNTERNEHMENSBRANCHE + "\\par");
+        list.add(BaseDataHandler.getData("Unternehmen_Branche") + "\\par");
                 //list.add("Steuerberatungsgesellschaft\\par");
-        list.add(UNTERNEHMEN_STRASSE +" " + UNTERNEHMEN_HAUSNUMMER + "\\par");
+        list.add(BaseDataHandler.getData("Unternehmen_Strasse") +" " + BaseDataHandler.getData("Unternehmen_Hausnummer") + "\\par");
                 //list.add("Kupferstraße 5\\par");
-        list.add(UNTERNEHMEN_POSTLEITZAHL + " " + UNTERNEHMEN_ORT + "\\par");
+        list.add(BaseDataHandler.getData("Unternehmen_Postleitzahl") + " " + BaseDataHandler.getData("Unternehmen_Ort") + "\\par");
                 //list.add("70565 Stuttgart\\par");
 
         list.add("\\vfill");
 
         // Aktueller Stand
-        list.add("\\underline{Versionsnummer:} " + DOKU_VERSIONSNUMMER + "\\par");
+        list.add("\\underline{Versionsnummer:} " + BaseDataHandler.getData("Doku_Versionsnummer") + "\\par");
                 //list.add("\\underline{Versionsnummer:} 1.0\\par");
-        list.add("\\underline{Stand:} " + DOKU_STAND_DATUM + "\\par");
+        list.add("\\underline{Stand:} " + BaseDataHandler.getData("Doku_Stand_Datum") + "\\par");
                 //list.add("\\underline{Stand:} 23.06.2022\\par");
 
         list.add("\\vfill");
