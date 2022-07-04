@@ -1,15 +1,8 @@
 package Builders;
 
 import Helpers.ExcelReader;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,7 +34,7 @@ public class GlossarBuilder {
 
         //String glossar_sheet_path = "Ressourcen/Glossar/Glossar_data.xlsx"; // TODO: Richtigen Pfad einfügen
         File glossar_sheet_path= new File("Ressourcen/Glossar/Glossar_data.xlsx");
-        Map<Integer, List<String>> data = new HashMap<>();
+        Map<Integer, List<String>> data;
         data = ExcelReader.readExcel(glossar_sheet_path);
 
         System.out.println("Das ist das Ergebnis der Excel: " + data);
