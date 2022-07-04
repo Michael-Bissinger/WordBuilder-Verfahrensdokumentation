@@ -20,18 +20,18 @@ public class BaseDataHandler {
         data = ExcelReader.readExcel(PATH_BASEDATA);
 
         for(int i=1;i<data.size();i++){
-            System.out.println("Lese Daten aus Datenbank-Export aus. Gesuchtes Item: " + searched_term + " Durchlauf Nr. " + i);
-            System.out.println("Inhalt: " + data.get(i).get(0));
+            System.out.println("Lese Daten aus Datenbank-Export aus. Gesuchtes Item: {" + searched_term + "} Durchlauf Nr. " + i);
+            System.out.println("Inhalt: {" + data.get(i).get(0) + "}");
 
-            if ((data.get(i).get(0)).toString() == searched_term.toString()) {
-                System.out.println("Gefunden: " + searched_term + " . Ergebnis: " + data.get(i).get(1));
+            if (data.get(i).get(0).equals(searched_term)) {
+                System.out.println("Gefunden: {" + searched_term + "} Ergebnis: {" + data.get(i).get(1) + "}");
                 requested_user_input = data.get(i).get(1);
                 break;
 
             }
             else
             {
-                System.out.println("Nicht gefunden");}
+                System.out.println("Keine Übereinstimmung");}
         }
 
         return requested_user_input;
