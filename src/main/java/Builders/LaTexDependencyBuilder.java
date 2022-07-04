@@ -27,6 +27,11 @@ public class LaTexDependencyBuilder {
         list.add("\\usepackage[hidelinks]{hyperref}");
         list.add("");
 
+        // Listen mit [1] ermöglichen
+        list.add("\\usepackage{enumerate}");
+        list.add("");
+
+
         list.add("\\begin{document}");
         list.add("");
 

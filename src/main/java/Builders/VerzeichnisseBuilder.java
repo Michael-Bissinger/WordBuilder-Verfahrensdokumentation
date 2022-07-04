@@ -14,9 +14,9 @@ public class VerzeichnisseBuilder {
         list.add("\\thispagestyle{empty}");
         list.add("\\newpage");
 
-        // Abildungsverzeichnis
-        list.add("\\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}");
-        list.add("\\listoffigures");
+        // Abildungsverzeichnis (entfällt)
+        //list.add("\\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}");
+        //list.add("\\listoffigures");
 
         // Seiteneinstellungen
         list.add("\\pagenumbering{}"); //Römische Zahlen, großgeschrieben
