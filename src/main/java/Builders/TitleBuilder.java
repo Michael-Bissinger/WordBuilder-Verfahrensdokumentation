@@ -1,5 +1,7 @@
 package Builders;
 
+import Helpers.BaseDataHandler;
+
 import java.util.List;
 
 public class TitleBuilder {
@@ -34,7 +36,7 @@ public class TitleBuilder {
                 //list.add("\\includegraphics[width=0.15\\textwidth]{Grafiken/HWS_New_Logo_blue.png}\\par");
 
         // Unternehmensangaben
-        list.add("\\textbf{"+ UNTERNEHMENSNAME + " " + RECHTSFORM + "}\\par");
+        list.add("\\textbf{"+ BaseDataHandler.getData("Unternehmen_Name") + " " + RECHTSFORM + "}\\par");
                 //list.add("\\textbf{HWS Lutz GmbH \\& Co. KG}\\par");
         list.add(UNTERNEHMENSBRANCHE + "\\par");
                 //list.add("Steuerberatungsgesellschaft\\par");

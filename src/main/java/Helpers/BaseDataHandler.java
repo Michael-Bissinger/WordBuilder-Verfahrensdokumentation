@@ -13,16 +13,28 @@ public class BaseDataHandler {
 
     public static String getData (String searched_term) {
 
-        String user_input = new String();
+        String requested_user_input = new String();
 
-        System.out.println("Lese Daten aus Datenbank aus");
+        System.out.println("Lese Daten aus Datenbank aus. Gesuchtes Item: " + searched_term);
         Map<Integer, List<String>> data;
         data = ExcelReader.readExcel(PATH_BASEDATA);
 
+        for(int i=1;i<data.size();i++){
+            System.out.println("Lese Daten aus Datenbank-Export aus. Gesuchtes Item: " + searched_term + " Durchlauf Nr. " + i);
+            System.out.println("Inhalt: " + data.get(i).get(0));
 
+            if ((data.get(i).get(0)).toString() == searched_term.toString()) {
+                System.out.println("Gefunden: " + searched_term + " . Ergebnis: " + data.get(i).get(1));
+                requested_user_input = data.get(i).get(1);
+                break;
 
+            }
+            else
+            {
+                System.out.println("Nicht gefunden");}
+        }
 
-        return user_input;
+        return requested_user_input;
     }
 
 }
