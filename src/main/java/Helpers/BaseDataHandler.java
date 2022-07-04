@@ -8,8 +8,6 @@ public class BaseDataHandler {
 
     private static File PATH_BASEDATA = new File("Ressourcen/_Testdaten/Datenbank_Testdaten.xlsx");
 
-    //private static String UNTERNEHMENSNAME = "HWS Lutz"; // Name des Unternehmens
-
 
     public static String getData (String searched_term) {
 

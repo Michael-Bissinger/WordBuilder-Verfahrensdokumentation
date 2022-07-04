@@ -3,11 +3,12 @@ package Builders;
 import Helpers.ExcelReader;
 
 import java.io.File;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class GlossarBuilder {
+
+    private static File PATH_GLOASSAR_FILE = new File("Ressourcen/Glossar/Glossar_data.xlsx");
 
     public static List<String> makeGlossar (List<String> list) {
 
@@ -29,13 +30,12 @@ public class GlossarBuilder {
         list.add("\\endlastfoot");
         list.add("");
 
-        //TODO: Aus Excel-Datei Einträge holen
+        // Aus Excel-Datei Einträge holen
         // https://www.baeldung.com/java-microsoft-excel
 
-        //String glossar_sheet_path = "Ressourcen/Glossar/Glossar_data.xlsx"; // TODO: Richtigen Pfad einfügen
-        File glossar_sheet_path= new File("Ressourcen/Glossar/Glossar_data.xlsx");
+        //File glossar_sheet_path= new File("Ressourcen/Glossar/Glossar_data.xlsx");
         Map<Integer, List<String>> data;
-        data = ExcelReader.readExcel(glossar_sheet_path);
+        data = ExcelReader.readExcel(PATH_GLOASSAR_FILE);
 
         System.out.println("Das ist das Ergebnis der Excel: " + data);
 

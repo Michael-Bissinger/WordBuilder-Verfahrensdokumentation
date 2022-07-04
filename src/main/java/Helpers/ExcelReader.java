@@ -73,4 +73,26 @@ public class ExcelReader {
 
     }
 
+    public static String findTermInData (Map<Integer, List<String>> data, String searched_term) {
+
+        String requested_input = new String();
+
+        for(int i=1;i<data.size();i++){
+            System.out.println("Lese Daten aus Excel-Liste aus. Gesuchtes Item: {" + searched_term + "} Durchlauf Nr. " + i);
+            System.out.println("Inhalt: {" + data.get(i).get(0) + "}");
+
+            if (data.get(i).get(0).equals(searched_term)) {
+                System.out.println("Gefunden: {" + searched_term + "} Ergebnis: {" + data.get(i).get(1) + "}");
+                requested_input = data.get(i).get(1);
+                break;
+
+            }
+            else
+            {
+                System.out.println("Keine Übereinstimmung");}
+        }
+
+        return requested_input;
+    }
+
 }
