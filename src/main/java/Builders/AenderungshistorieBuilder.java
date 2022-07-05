@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class AenderungshistorieBuilder {
 
-    private static File PATH_AENDERUNGSHISTORIE_DATA = new File("Ressourcen/_Testdaten/Datenbank_Testdaten.xlsx");
+    private static File PATH_AENDERUNGSHISTORIE_DATA = new File("Ressourcen/_Testdaten/Datenbank_Version_Historie.xlsx");
 
     public static List<String> makeAenderungshistorie (List<String> list) {
 
@@ -45,10 +45,11 @@ public class AenderungshistorieBuilder {
         for(int i=1;i<data.size();i++){
             System.out.println("Schreibe Änderungshistorie. Durchlauf " + i);
 
-            list.add(data.get(i).get(0) + " & " + "XXX & XXX & XXX  \\\\ \\hline");
+            list.add(data.get(i).get(0) + " & " +
+                    data.get(i).get(1) + " & " +
+                    data.get(i).get(2) + " & " +
+                    data.get(i).get(3) + " \\\\ \\hline");
             //list.add("XXX & XXX & XXX & XXX  \\\\ \\hline");
-
-
 
 
         }
