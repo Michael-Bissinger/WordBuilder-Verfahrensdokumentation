@@ -62,11 +62,17 @@ public class ZielsetzungUeberblickBuilder {
         //\item [Kurze Beschreibung des Unternehmens: Name, Sitz, Rechtsform, Branche, Geschäftszweck, Gewinnermittlungsart].
         list.add("");
 
+        // Branchenbesonderheiten
         list.add("\\item Es gelten die Besonderheiten der folgenden Gesetze: ");
 
         Map<Integer, List<String>> data;
         data = ExcelReader.readExcel(PATH_BRANCHENBESONDERHEITEN_FILE);
-        list.add(ExcelReader.findTermInData(data, BaseDataHandler.getData("Unternehmen_Branche")));
+        String branchenbesonderheiten = ExcelReader.findTermInData(data, BaseDataHandler.getData("Unternehmen_Branche"));
+
+        if (branchenbesonderheiten.equals("")) { // Errorandling, wenn Branche nicht im System ist
+            branchenbesonderheiten = "??? (Branche nicht im System) ???";
+        }
+        list.add(branchenbesonderheiten);
 
 
 
