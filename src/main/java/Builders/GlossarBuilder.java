@@ -19,9 +19,9 @@ public class GlossarBuilder {
         list.add("\\hline \\multicolumn{1}{|l|}{\\textbf{Begriff}} & \\multicolumn{1}{l|}{\\textbf{Definition/Erläuterung}} \\\\ \\hline");
         list.add("\\endfirsthead");
         list.add("");
-        list.add("\\multicolumn{2}{c}");
+        list.add("\\multicolumn{2}{l}");
         list.add("{{ \\tablename\\ \\thetable{} -- weitergeführt von vorheriger Seite}} \\\\");
-        list.add("\\hline \\multicolumn{1}{|c|}{\\textbf{Begriff}} & \\multicolumn{1}{c|}{\\textbf{Definition/Erläuterung}} \\\\ \\hline");
+        list.add("\\hline \\multicolumn{1}{|l|}{\\textbf{Begriff}} & \\multicolumn{1}{l|}{\\textbf{Definition/Erläuterung}} \\\\ \\hline");
         list.add("\\endhead");
         list.add("");
         list.add("\\endfoot");
@@ -46,7 +46,7 @@ public class GlossarBuilder {
             System.out.print("Glossar wird geschrieben. Durchlauf Nr. " + i);
             System.out.println("Inhalt: " + data.get(i).get(0));
 
-            list.add(data.get(i).get(0) + " & " + data.get(i).get(1) + "  \\\\ \\hline");
+            list.add("\\small " + data.get(i).get(0) + " & \\small \\textit{" + data.get(i).get(1) + "}  \\\\ \\hline");
             list.add("");
 
         }

@@ -26,9 +26,9 @@ public class AenderungshistorieBuilder {
         list.add("\\multicolumn{1}{l|}{\\textbf{Export durch}} & \\multicolumn{1}{l|}{\\textbf{Kommentar zur Änderung}} \\\\ \\hline ");
         list.add("\\endfirsthead");
         list.add("");
-        list.add("\\multicolumn{4}{c}");
+        list.add("\\multicolumn{4}{l}");
         list.add("{{ \\tablename\\ \\thetable{} -- weitergeführt von vorheriger Seite}} \\\\");
-        list.add("\\hline \\multicolumn{1}{|c|}{\\textbf{Datum}} & \\multicolumn{1}{c|}{\\textbf{Version}} & \\multicolumn{1}{c|}{\\textbf{Export durch}} & \\multicolumn{1}{l|}{\\textbf{Kommentar zur Änderung}} \\\\ \\hline ");
+        list.add("\\hline \\multicolumn{1}{|l|}{\\textbf{Datum}} & \\multicolumn{1}{l|}{\\textbf{Version}} & \\multicolumn{1}{c|}{\\textbf{Export durch}} & \\multicolumn{1}{l|}{\\textbf{Kommentar zur Änderung}} \\\\ \\hline ");
         list.add("\\endhead");
         list.add("");
         list.add("\\endfoot");
