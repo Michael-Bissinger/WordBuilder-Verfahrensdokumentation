@@ -10,6 +10,8 @@ public class main {
         // Wo liegen die benötigten Dokumente?
         String location = FileLocator.locateFile();
 
+
+
         // Hier werden Zeilen für finalen Output gesammelt
         List<String> latex_dependencies = new ArrayList<>();
         List<String> titelblatt = new ArrayList<>();

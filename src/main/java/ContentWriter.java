@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 public class ContentWriter {
 
+
+
     public static List<String> addline (List<String> lines, String line_original){ //TODO:Noch durch String-Liste ersetzen
 
         String line_neu = parseToLaTex(line_original);
