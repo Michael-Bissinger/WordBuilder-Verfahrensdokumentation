@@ -1,5 +1,7 @@
 package Builders;
 
+import Helpers.BaseDataHandler;
+
 import java.util.List;
 
 public class LaTexDependencyBuilder {
@@ -41,7 +43,7 @@ public class LaTexDependencyBuilder {
         list.add("\\clearpairofpagestyles");
         list.add("\\ihead{\\leftmark}");
         list.add("\\ohead{\\ifstr{\\leftmark}{\\rightbotmark}{}{\\rightbotmark}}");
-        list.add("\\ifoot*{Verfahrensdokumentation XXX}");
+        list.add("\\ifoot*{Verfahrensdokumentation " + BaseDataHandler.getData("Unternehmen_Name") + "}");
         list.add("\\usepackage{lastpage}");
         list.add("\\ofoot*{Seite \\thepage\\ / \\pageref{LastPage}}");
         list.add("\\renewcommand*\\chapterpagestyle{scrheadings}");

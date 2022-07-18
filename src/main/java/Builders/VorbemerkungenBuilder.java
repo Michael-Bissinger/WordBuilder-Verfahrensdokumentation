@@ -21,6 +21,26 @@ public class VorbemerkungenBuilder {
         // TODO: Bisherige Versionsnummer muss gepflegt werden
         list.add("Alle gegebenenfalls zuvor erstellten Verfahrensdokumentationen werden archiviert, sind ansonsten aber veraltet und somit ungültig.");
         list.add("");
+
+
+        // Kapitel: Zielsetzung und Anwendungsbereich
+        list.add("\\section{Zielsetzung und Anwendungsbereich}");
+        list.add("");
+        list.add("\\begin{enumerate}[{[1]}]");
+        list.add("");
+        list.add("\\item XXX");
+        list.add("");
+        list.add("\\item XXX");
+        list.add("");
+        list.add("\\item Die dargestellten Verfahren und Maßnahmen sind von allen Personen zu beachten, die an den einzelnen Prozess-Schritten beteiligt sind und für diese unterwiesen und autorisiert wurden. Nicht unterwiesene oder nicht autorisierte Personen dürfen nicht in den Prozess eingreifen.");
+        list.add("");
+        list.add("\\item XXX");
+        list.add("");
+        list.add("\\end{enumerate}");
+        list.add("");
+        list.add("");
+
+        list.add("");
         list.add("\\end{enumerate}");
         list.add("");
 

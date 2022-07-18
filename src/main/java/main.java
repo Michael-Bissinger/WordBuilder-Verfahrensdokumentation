@@ -34,7 +34,7 @@ public class main {
         titelblatt = TitleBuilder.makeTitle(titelblatt);
         verzeichnisse = VerzeichnisseBuilder.makeVerzeichnisse(verzeichnisse);
         vorbemerkungen = VorbemerkungenBuilder.makeVorbemerkungen(vorbemerkungen);
-        zielsetzung_ueberblick = ZielsetzungUeberblickBuilder.makeZielsetzungUeberblick(zielsetzung_ueberblick);
+        zielsetzung_ueberblick = UnternehmenOrganisationBuilder.makeUnternehmenOrganisation(zielsetzung_ueberblick);
         organisation_sicherheit = OrganisationSicherheitBuilder.makeOrganisationSicherheit(organisation_sicherheit);
         verfahren_massnahmen = VerfahrenMassnahmenBuilder.makeVerfahrenMassnahmen(verfahren_massnahmen);
         mitgeltende_unterlagen = MitgeltendeUnterlagenBuilder.makeMitgeltendeUnterlagen(mitgeltende_unterlagen);
