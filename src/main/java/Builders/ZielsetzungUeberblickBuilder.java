@@ -55,8 +55,15 @@ public class ZielsetzungUeberblickBuilder {
                 BaseDataHandler.getData("Unternehmen_Branche"));
         list.add("\\item \\textbf{Geschäftszweck:} " +
                 BaseDataHandler.getData("Unternehmen_Geschäftszweck"));
+        list.add("\\item \\textbf{USt-ID-Nummer:} " +
+                BaseDataHandler.getData("Unternehmen_USt-ID-Nummer"));
+        list.add("\\item \\textbf{Steuernummer:} " +
+                BaseDataHandler.getData("Unternehmen_Steuernummer"));
         list.add("\\item \\textbf{Gewinnermittlungsart:} " +
                 BaseDataHandler.getData("Unternehmen_Gewinnermittlungsart"));
+        list.add("\\item \\textbf{Zuständiges Finanzamt:} " +
+                BaseDataHandler.getData("Unternehmen_Zuständiges Finanzamt"));
+
         list.add("\\end{itemize}");
         //list.add("\\item Kurze Beschreibung des Unternehmens: Name, Sitz, Rechtsform, Branche, Geschäftszweck, Gewinnermittlungsart.");
         //\item [Kurze Beschreibung des Unternehmens: Name, Sitz, Rechtsform, Branche, Geschäftszweck, Gewinnermittlungsart].

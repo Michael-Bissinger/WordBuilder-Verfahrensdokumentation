@@ -19,6 +19,7 @@ public class VorbemerkungenBuilder {
         list.add("");
         list.add("\\item Die vorliegende Verfahrensdokumentation ersetzt die bis dahin geltende Verfahrensdokumentation [Versionsbezeichnung]. Eine Übersicht der vorgenommenen Aktualisierungen findet sich in Kapitel \\ref{sec:Änderungshistorie}.");
         // TODO: Bisherige Versionsnummer muss gepflegt werden
+        list.add("Alle gegebenenfalls zuvor erstellten Verfahrensdokumentationen werden archiviert, sind ansonsten aber veraltet und somit ungültig.");
         list.add("");
         list.add("\\end{enumerate}");
         list.add("");
