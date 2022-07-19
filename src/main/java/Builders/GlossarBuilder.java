@@ -1,6 +1,7 @@
 package Builders;
 
 import Helpers.ExcelReader;
+import LaTexBuilders.LongTableBuilder;
 
 import java.io.File;
 import java.util.List;
@@ -63,6 +64,11 @@ public class GlossarBuilder {
         list.add("\\end{longtable}");
         list.add("");
         list.add("");
+
+        String[] cars = {"Volvo", "BMW", "Ford", "Mazda"}; // TODO: Delte Just test
+        LongTableBuilder.startLongTable_test(list, 2, cars); // TODO: Delte Just test
+        LongTableBuilder.endLongTable(list); // TODO: Delte Just test
+
 
         return list;
 
