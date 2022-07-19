@@ -117,21 +117,6 @@ public class UnternehmenOrganisationBuilder {
 
         String[] captions_abteilungen = {"Abteilung", "Leitung"};
         list = LongTableBuilder.startLongTable(list, captions_abteilungen);
-        //list.add("\\begin{longtable} {|l|p{4,3cm}|}");
-        //list.add("");
-        //list.add("\\hline \\multicolumn{1}{|l|}{\\textbf{Abteilung}} & \\multicolumn{1}{l|}{\\textbf{Leitung}}  \\\\ \\hline ");
-        //list.add("\\endfirsthead");
-        //list.add("");
-        //list.add("\\multicolumn{2}{c}");
-        //list.add("{{ \\tablename\\ \\thetable{} -- weitergeführt von vorheriger Seite}} \\\\");
-        //list.add("\\hline \\multicolumn{1}{|l|}{\\textbf{Abteilung}} & \\multicolumn{1}{l|}{\\textbf{Leitung}} \\\\ \\hline ");
-        //list.add("\\endhead");
-        //list.add("");
-        //list.add("\\endfoot");
-        //list.add("");
-        //list.add("\\hline ");
-        //list.add("\\endlastfoot");
-        //list.add("");
 
         Map<Integer, List<String>> data_abteilungen;
         data_abteilungen = ExcelReader.readExcel(PATH_ABTEILUNGEN_DATA);
@@ -155,21 +140,6 @@ public class UnternehmenOrganisationBuilder {
 
         String[] captions_mitarbeiter = {"Nachname", "Vorname", "Berufsbezeichnung", "Abteilung"};
         list = LongTableBuilder.startLongTable(list, captions_mitarbeiter);
-        //list.add("\\begin{longtable} {|l|l|l|p{4,3cm}|}");
-        //list.add("");
-        //list.add("\\hline \\multicolumn{1}{|l|}{\\textbf{Nachname}} & \\multicolumn{1}{l|}{\\textbf{Vorname}} & \t\t\\multicolumn{1}{l|}{\\textbf{Berufsbezeichnung}} & \\multicolumn{1}{l|}{\\textbf{Abteilung}} \\\\ \\hline ");
-        //list.add("\\endfirsthead");
-        //list.add("");
-        //list.add("\\multicolumn{4}{c}");
-        //list.add("{{ \\tablename\\ \\thetable{} -- weitergeführt von vorheriger Seite}} \\\\");
-        //list.add("\\hline \\multicolumn{1}{|l|}{\\textbf{Nachname}} & \\multicolumn{1}{l|}{\\textbf{Vorname}} & \\multicolumn{1}{l|}{\\textbf{Berufsbezeichnung}} & \\multicolumn{1}{l|}{\\textbf{Abteilung}} \\\\ \\hline ");
-        //list.add("\\endhead");
-        //list.add("");
-        //list.add("\\endfoot");
-        //list.add("");
-        //list.add("\\hline ");
-        //list.add("\\endlastfoot");
-        //list.add("");
 
         Map<Integer, List<String>> data_mitarbeiter;
         data_mitarbeiter = ExcelReader.readExcel(PATH_MITARBEITER_DATA);
