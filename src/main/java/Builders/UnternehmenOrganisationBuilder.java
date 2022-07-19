@@ -11,6 +11,7 @@ public class UnternehmenOrganisationBuilder {
 
     private static File PATH_BRANCHENBESONDERHEITEN_FILE = new File("Ressourcen/Rechtliches Wissen/Branchenbesonderheiten.xlsx");
     private static File PATH_MITARBEITER_DATA = new File("Ressourcen/_Testdaten/Datenbank_Testdaten_Mitarbeiter.xlsx");
+    private static File PATH_ABTEILUNGEN_DATA = new File("Ressourcen/_Testdaten/Datenbank_Testdaten_Abteilungen.xlsx");
 
     public static List<String> makeUnternehmenOrganisation(List<String> list) {
 
@@ -113,6 +114,40 @@ public class UnternehmenOrganisationBuilder {
         list.add("\\subsection{Abteilungen}");
         list.add("");
 
+        list.add("\\begin{longtable} {|l|p{4,3cm}|}");
+        list.add("");
+        list.add("\\hline \\multicolumn{1}{|l|}{\\textbf{Abteilung}} & \\multicolumn{1}{l|}{\\textbf{Leitung}}  \\\\ \\hline ");
+        list.add("\\endfirsthead");
+        list.add("");
+        list.add("\\multicolumn{2}{c}");
+        list.add("{{ \\tablename\\ \\thetable{} -- weitergeführt von vorheriger Seite}} \\\\");
+        list.add("\\hline \\multicolumn{1}{|l|}{\\textbf{Abteilung}} & \\multicolumn{1}{l|}{\\textbf{Leitung}} \\\\ \\hline ");
+        list.add("\\endhead");
+        list.add("");
+        list.add("\\endfoot");
+        list.add("");
+        list.add("\\hline ");
+        list.add("\\endlastfoot");
+        list.add("");
+
+        Map<Integer, List<String>> data_abteilungen;
+        data_abteilungen = ExcelReader.readExcel(PATH_ABTEILUNGEN_DATA);
+
+        for(int i=1;i<data_abteilungen.size();i++){
+            System.out.println("Schreibe Abteilungen. Durchlauf " + i);
+
+            list.add(data_abteilungen.get(i).get(1) + " & " +
+                    data_abteilungen.get(i).get(3) + ", " +
+                    data_abteilungen.get(i).get(2) + " \\\\ \\hline");
+            //list.add("XXX & XXX & XXX & XXX  \\\\ \\hline");
+
+
+        }
+
+        list.add("");
+        list.add("\\end{longtable}");
+        list.add("");
+
         // Mitarbeiter
         list.add("\\subsection{Mitarbeiter}");
         list.add("");
@@ -136,7 +171,7 @@ public class UnternehmenOrganisationBuilder {
         data_mitarbeiter = ExcelReader.readExcel(PATH_MITARBEITER_DATA);
 
         for(int i=1;i<data_mitarbeiter.size();i++){
-            System.out.println("Schreibe Änderungshistorie. Durchlauf " + i);
+            System.out.println("Schreibe Mitarbeiter. Durchlauf " + i);
 
             list.add(data_mitarbeiter.get(i).get(2) + " & " +
                     data_mitarbeiter.get(i).get(1) + " & " +
