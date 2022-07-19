@@ -147,9 +147,6 @@ public class UnternehmenOrganisationBuilder {
         }
 
         list = LongTableBuilder.endLongTable(list);
-        list.add("");
-        list.add("\\end{longtable}");
-        list.add("");
 
         // Mitarbeiter
         list.add("\\subsection{Mitarbeiter}");
@@ -188,9 +185,6 @@ public class UnternehmenOrganisationBuilder {
         }
 
         list = LongTableBuilder.endLongTable(list);
-        list.add("");
-        list.add("\\end{longtable}");
-        list.add("");
 
         // Organigram
         list.add("\\subsection{Organigram}");

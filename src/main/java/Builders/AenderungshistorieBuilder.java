@@ -57,8 +57,6 @@ public class AenderungshistorieBuilder {
         }
         list.add("");
         list = LongTableBuilder.endLongTable(list);
-        list.add("\\end{longtable}");
-        list.add("");
 
 
         return list;

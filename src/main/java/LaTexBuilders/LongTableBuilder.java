@@ -15,6 +15,8 @@ public class LongTableBuilder {
     public static List<String> endLongTable (List<String> list) {
 
         System.out.println("End longtable.");
+        list.add("\\end{longtable}");
+        list.add("");
 
         return list;
 
