@@ -2,6 +2,7 @@ package Builders;
 
 import Helpers.BaseDataHandler;
 import Helpers.ExcelReader;
+import LaTexBuilders.LongTableBuilder;
 
 import java.io.File;
 import java.util.List;
@@ -114,6 +115,7 @@ public class UnternehmenOrganisationBuilder {
         list.add("\\subsection{Abteilungen}");
         list.add("");
 
+        list = LongTableBuilder.startLongTable(list, 2);
         list.add("\\begin{longtable} {|l|p{4,3cm}|}");
         list.add("");
         list.add("\\hline \\multicolumn{1}{|l|}{\\textbf{Abteilung}} & \\multicolumn{1}{l|}{\\textbf{Leitung}}  \\\\ \\hline ");
@@ -144,6 +146,7 @@ public class UnternehmenOrganisationBuilder {
 
         }
 
+        list = LongTableBuilder.endLongTable(list);
         list.add("");
         list.add("\\end{longtable}");
         list.add("");
@@ -151,6 +154,8 @@ public class UnternehmenOrganisationBuilder {
         // Mitarbeiter
         list.add("\\subsection{Mitarbeiter}");
         list.add("");
+
+        list = LongTableBuilder.startLongTable(list, 4);
         list.add("\\begin{longtable} {|l|l|l|p{4,3cm}|}");
         list.add("");
         list.add("\\hline \\multicolumn{1}{|l|}{\\textbf{Nachname}} & \\multicolumn{1}{l|}{\\textbf{Vorname}} & \t\t\\multicolumn{1}{l|}{\\textbf{Berufsbezeichnung}} & \\multicolumn{1}{l|}{\\textbf{Abteilung}} \\\\ \\hline ");
@@ -182,6 +187,7 @@ public class UnternehmenOrganisationBuilder {
 
         }
 
+        list = LongTableBuilder.endLongTable(list);
         list.add("");
         list.add("\\end{longtable}");
         list.add("");

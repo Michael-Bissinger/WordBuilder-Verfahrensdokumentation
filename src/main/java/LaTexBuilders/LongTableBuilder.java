@@ -12,7 +12,7 @@ public class LongTableBuilder {
 
     }
 
-    public static List<String> endLongTable (List<String> list, int columns) {
+    public static List<String> endLongTable (List<String> list) {
 
         System.out.println("End longtable.");
 

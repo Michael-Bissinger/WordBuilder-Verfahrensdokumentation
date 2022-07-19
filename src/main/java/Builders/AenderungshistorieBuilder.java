@@ -1,6 +1,7 @@
 package Builders;
 
 import Helpers.ExcelReader;
+import LaTexBuilders.LongTableBuilder;
 
 import java.io.File;
 import java.util.List;
@@ -20,6 +21,7 @@ public class AenderungshistorieBuilder {
 
         // Header Änderungshistorie
 
+        list = LongTableBuilder.startLongTable(list, 4);
         list.add("\\begin{longtable}{|l|l|l|p{9,3cm}|}");
         list.add("");
         list.add("\\hline \\multicolumn{1}{|l|}{\\textbf{Datum}} & \\multicolumn{1}{l|}{\\textbf{Version}} & ");
@@ -54,6 +56,7 @@ public class AenderungshistorieBuilder {
 
         }
         list.add("");
+        list = LongTableBuilder.endLongTable(list);
         list.add("\\end{longtable}");
         list.add("");
 
