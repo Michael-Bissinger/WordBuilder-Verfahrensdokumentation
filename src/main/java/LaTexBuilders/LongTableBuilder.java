@@ -13,9 +13,9 @@ public class LongTableBuilder {
     }
 
 
-    public static List<String> startLongTable_test (List<String> list, int columns, String[] headers) {
+    public static List<String> startLongTable_test (List<String> list, String[] headers) {
 
-        System.out.println("Start longtable with " + columns + "columns.");
+        System.out.println("Start longtable with " + headers.length + " columns.");
 
         // ----------- HEADER ---------------
 
@@ -30,17 +30,25 @@ public class LongTableBuilder {
 
         // ----------- COLUMNS -----------------
 
-        StringBuilder columns_longtable = new StringBuilder("|");
+        StringBuilder columns_longtable = new StringBuilder("");
         for (int i = 0; i < headers.length; i++) {
-            head_longtable.append("l|");
+            columns_longtable.append("\\multicolumn{1}{|l|}{\\textbf{" + headers[i] + "}} ");
+
+            if (i!=(headers.length-1)) {
+                columns_longtable.append("& ");
+            }
+
         }
 
-        list.add("\\hline \\multicolumn{1}{|l|}{\\textbf{Abteilung}} & \\multicolumn{1}{l|}{\\textbf{Leitung}}  \\\\ \\hline ");
+        list.add("\\hline " + columns_longtable.toString() + " \\\\ \\hline ");
+        //list.add("\\hline \\multicolumn{1}{|l|}{\\textbf{Abteilung}} & \\multicolumn{1}{l|}{\\textbf{Leitung}}  \\\\ \\hline ");
         list.add("\\endfirsthead");
         list.add("");
-        list.add("\\multicolumn{" + columns + "}{c}");
+        list.add("\\multicolumn{" + headers.length + "}{c}");
+        //list.add("\\multicolumn{2}{c}");
         list.add("{{ \\tablename\\ \\thetable{} -- weitergeführt von vorheriger Seite}} \\\\");
-        list.add("\\hline \\multicolumn{1}{|l|}{\\textbf{Abteilung}} & \\multicolumn{1}{l|}{\\textbf{Leitung}} \\\\ \\hline ");
+        list.add("\\hline " + columns_longtable.toString() +" \\\\ \\hline ");
+        //list.add("\\hline \\multicolumn{1}{|l|}{\\textbf{Abteilung}} & \\multicolumn{1}{l|}{\\textbf{Leitung}} \\\\ \\hline ");
         list.add("\\endhead");
         list.add("");
         list.add("\\endfoot");

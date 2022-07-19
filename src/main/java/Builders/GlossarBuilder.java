@@ -65,9 +65,9 @@ public class GlossarBuilder {
         list.add("");
         list.add("");
 
-        String[] cars = {"Volvo", "BMW", "Ford", "Mazda"}; // TODO: Delte Just test
-        LongTableBuilder.startLongTable_test(list, 2, cars); // TODO: Delte Just test
-        LongTableBuilder.endLongTable(list); // TODO: Delte Just test
+        String[] cars = {"Volvo", "BMW", "Opel", "Mercedes"}; // TODO: Delete Just test
+        LongTableBuilder.startLongTable_test(list, cars); // TODO: Delete Just test
+        LongTableBuilder.endLongTable(list); // TODO: Delete Just test
 
 
         return list;
