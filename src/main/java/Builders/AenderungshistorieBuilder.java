@@ -20,26 +20,26 @@ public class AenderungshistorieBuilder {
         list.add("");
 
         // Header Änderungshistorie
-
-        list = LongTableBuilder.startLongTable(list, 4);
-        list.add("\\begin{longtable}{|l|l|l|p{9,3cm}|}");
-        list.add("");
-        list.add("\\hline \\multicolumn{1}{|l|}{\\textbf{Datum}} & \\multicolumn{1}{l|}{\\textbf{Version}} & ");
-        list.add("\\multicolumn{1}{l|}{\\textbf{Export durch}} & \\multicolumn{1}{l|}{\\textbf{Kommentar zur Änderung}} \\\\ \\hline ");
-        list.add("\\endfirsthead");
-        list.add("");
-        list.add("\\multicolumn{4}{l}");
-        list.add("{{ \\tablename\\ \\thetable{} -- weitergeführt von vorheriger Seite}} \\\\");
-        list.add("\\hline \\multicolumn{1}{|l|}{\\textbf{Datum}} & \\multicolumn{1}{l|}{\\textbf{Version}} & \\multicolumn{1}{c|}{\\textbf{Export durch}} & \\multicolumn{1}{l|}{\\textbf{Kommentar zur Änderung}} \\\\ \\hline ");
-        list.add("\\endhead");
-        list.add("");
-        list.add("\\endfoot");
-        list.add("");
-        list.add("\\hline ");
-        list.add("\\endlastfoot");
-        list.add("");
-        list.add("");
-        list.add("");
+        String[] captions_aenderungshistorie = {"Datum", "Version", "Export durch", "Kommentar zur Änderung"};
+        list = LongTableBuilder.startLongTable(list, captions_aenderungshistorie);
+        //list.add("\\begin{longtable}{|l|l|l|p{9,3cm}|}");
+        //list.add("");
+        //list.add("\\hline \\multicolumn{1}{|l|}{\\textbf{Datum}} & \\multicolumn{1}{l|}{\\textbf{Version}} & ");
+        //list.add("\\multicolumn{1}{l|}{\\textbf{Export durch}} & \\multicolumn{1}{l|}{\\textbf{Kommentar zur Änderung}} \\\\ \\hline ");
+        //list.add("\\endfirsthead");
+        //list.add("");
+        //list.add("\\multicolumn{4}{l}");
+        //list.add("{{ \\tablename\\ \\thetable{} -- weitergeführt von vorheriger Seite}} \\\\");
+        //list.add("\\hline \\multicolumn{1}{|l|}{\\textbf{Datum}} & \\multicolumn{1}{l|}{\\textbf{Version}} & \\multicolumn{1}{c|}{\\textbf{Export durch}} & \\multicolumn{1}{l|}{\\textbf{Kommentar zur Änderung}} \\\\ \\hline ");
+        //list.add("\\endhead");
+        //list.add("");
+        //list.add("\\endfoot");
+        //list.add("");
+        //list.add("\\hline ");
+        //list.add("\\endlastfoot");
+        //list.add("");
+        //list.add("");
+        //list.add("");
 
         Map<Integer, List<String>> data;
         data = ExcelReader.readExcel(PATH_AENDERUNGSHISTORIE_DATA);
