@@ -13,6 +13,7 @@ public class UnternehmenOrganisationBuilder {
     private static File PATH_BRANCHENBESONDERHEITEN_FILE = new File("Ressourcen/Rechtliches Wissen/Branchenbesonderheiten.xlsx");
     private static File PATH_MITARBEITER_DATA = new File("Ressourcen/_Testdaten/Datenbank_Testdaten_Mitarbeiter.xlsx");
     private static File PATH_ABTEILUNGEN_DATA = new File("Ressourcen/_Testdaten/Datenbank_Testdaten_Abteilungen.xlsx");
+    private static File PATH_EXTERNE_GESCHAEFTSPARTNER_DATA = new File("Ressourcen/_Testdaten/Datenbank_Testdaten_externeGeschaeftspartner.xlsx");
 
     public static List<String> makeUnternehmenOrganisation(List<String> list) {
 
@@ -158,17 +159,41 @@ public class UnternehmenOrganisationBuilder {
 
         list = LongTableBuilder.endLongTable(list);
 
+
+
+        // Externe Geschäftspartner
+        list.add("\\subsection{Externe Geschäftspartner}");
+        list.add("");
+        String[] captions_externe_geschaeftspartner = {"Nachname", "Vorname", "Berufsbezeichnung", "Abteilung"};
+        list = LongTableBuilder.startLongTable(list, captions_externe_geschaeftspartner);
+
+        Map<Integer, List<String>> data_externe_geschaeftspartner;
+        data_externe_geschaeftspartner = ExcelReader.readExcel(PATH_EXTERNE_GESCHAEFTSPARTNER_DATA);
+
+        for(int i=1;i<data_externe_geschaeftspartner.size();i++){
+            System.out.println("Schreibe externe Geschäftspartner. Durchlauf " + i);
+
+            list.add(data_externe_geschaeftspartner.get(i).get(2) + " & " +
+                    data_externe_geschaeftspartner.get(i).get(1) + " & " +
+                    data_externe_geschaeftspartner.get(i).get(3) + " & " +
+                    data_externe_geschaeftspartner.get(i).get(4) + " \\\\ \\hline");
+            //list.add("XXX & XXX & XXX & XXX  \\\\ \\hline");
+
+
+        }
+
+        list = LongTableBuilder.endLongTable(list);
+        list.add("");
+
+
         // Organigram
-        list.add("\\subsection{Organigram}");
+        list.add("\\newpage");
+        list.add("\\section{Organigram}");
         list.add("");
         list.add("");
         list.add("");
         list.add("");
 
-        // Externe Geschäftspartner
-        list.add("\\section{Externe Geschäftspartner}");
-        list.add("");
-        list.add("");
         list.add("");
         list.add("");
         list.add("");
