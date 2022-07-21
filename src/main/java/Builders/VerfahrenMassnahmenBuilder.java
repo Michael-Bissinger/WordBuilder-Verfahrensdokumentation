@@ -10,6 +10,14 @@ public class VerfahrenMassnahmenBuilder {
         list.add("");
         list.add("XXXXX");
         list.add("");
+        list.add("\\section{Zuständigkeiten}");
+        list.add("");
+        list.add("XXX");
+        list.add("");
+        list.add("\\section{Organisation und Internes Kontrollsystem (IKS)}");
+        list.add("");
+        list.add("XXX");
+        list.add("");
 
         return list;
 

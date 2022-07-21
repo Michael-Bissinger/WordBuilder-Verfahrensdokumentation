@@ -111,6 +111,9 @@ public class UnternehmenOrganisationBuilder {
         // Unternehmenssruktur
         list.add("\\section{Unternehmensstruktur}");
         list.add("");
+        list.add("Im folgenden wird die personelle Situation beschrieben.");
+        list.add("Eine zusammenfassende grafische Darstellung der Strukturen wird in Kapitel \\ref{sec:organigram} dargestellt.");
+        list.add("");
 
         // Abteilungen
         list.add("\\subsection{Abteilungen}");
@@ -189,7 +192,7 @@ public class UnternehmenOrganisationBuilder {
         // Organigram
         list.add("\\newpage");
         list.add("\\section{Organigram}");
-        list.add("");
+        list.add("\\label{sec:organigram}");
         list.add("");
         list.add("");
         list.add("");
